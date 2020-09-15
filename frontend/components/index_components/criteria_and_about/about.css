@@ -1,0 +1,252 @@
+.about-criteria-container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.about-criteria-container .col-12.col-md-6:first-child {
+  background: #e3d9c5;
+  padding: 0;
+}
+.about-section {
+  max-width: 600px;
+  margin-left: auto;
+  padding-top: 100px;
+  padding-bottom: 87px;
+  padding-right: 30px;
+}
+@media (max-width: 991px) {
+  .about-section {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.about-tagline {
+  color: #686868;
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-size: 20px;
+}
+.about-mainline {
+  margin: 0;
+  font-family: 'Poppins';
+  color: #232323;
+  font-weight: 600;
+  font-size: 32px;
+  margin-top: 10px;
+}
+.about-underline {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #bf8b4e;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.about-highlight {
+  color: #232323;
+  font-size: 22px;
+  font-weight: 300;
+  font-family: 'Open Sans';
+  margin-bottom: 10px;
+}
+.about-content {
+  margin: 0;
+  color: #242424;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: 'Open Sans';
+}
+.about-name_box {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-around;
+}
+.about-name_box img {
+  max-width: 100%;
+}
+.about-name_box img + img {
+  margin-left: 30px;
+}
+
+.about-criteria-container .col-12.col-md-6:last-child {
+  background: #f3e9d2;
+  padding: 0;
+}
+.criteria-section {
+  max-width: 570px;
+  margin-right: auto;
+  padding: 100px 0;
+  padding-left: 70px;
+}
+.criteria-title h3 {
+  font-family: 'Poppins';
+  font-weight: 600;
+  color: #232323;
+  font-size: 32px;
+  margin: 0;
+  margin-bottom: 45px;
+}
+.criteria-title h3::after {
+  content: '';
+  width: 40px;
+  display: inline-block;
+  vertical-align: bottom;
+  height: 2px;
+  background: #e0b961;
+  top: -7px;
+  position: relative;
+  margin-left: 20px;
+}
+.single-criteria .icon-box i {
+  color: #f79468;
+  font-size: 48px;
+}
+.single-criteria .text-box {
+  padding-left: 30px;
+}
+.single-criteria .text-box h3 {
+  margin: 0;
+  color: #252422;
+  font-weight: 500;
+  font-family: 'Poppins';
+  font-size: 18px;
+  line-height: 28px;
+}
+.single-criteria .text-box,
+.single-criteria .icon-box {
+  display: table-cell;
+  vertical-align: middle;
+}
+.criteria-section .single-criteria + .single-criteria {
+  margin-top: 35px;
+}
+.database path {
+  fill: transparent;
+  stroke-width: 5;
+  stroke: red;
+  stroke-dasharray: 2300;
+  stroke-dashoffset: 0;
+  animation-name: animate-database;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  -webkit-animation-name: animate-database;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  -moz-animation-name: animate-database;
+  -moz-animation-duration: 2s;
+  -moz-animation-fill-mode: both;
+  -moz-animation-play-state: paused;
+  -o-animation-name: animate-database;
+  -o-animation-duration: 2s;
+  -o-animation-fill-mode: both;
+  -o-animation-play-state: paused;
+  -ms-animation-name: animate-database;
+  -ms-animation-duration: 2s;
+  -ms-animation-fill-mode: both;
+  -ms-animation-play-state: paused;
+}
+.database ellipse {
+  fill: none;
+  stroke: red;
+  stroke-width: 3;
+  stroke-miterlimit: 4;
+  stroke-dasharray: 2300;
+  stroke-opacity: 1;
+  animation-name: animate-database;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+}
+svg {
+  overflow: visible;
+}
+.about-section.hovered .about-name_box path,
+.about-name_box.hovered path,
+.about-section.hovered .about-name_box ellipse {
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-play-state: running;
+}
+
+.about-section.unhover .about-name_box path,
+.about-name_box.unhover path,
+.about-section.unhover .about-name_box ellipse {
+  stroke-dashoffset: 0;
+  animation-name: animate-database-reverse;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+  -webkit-animation-name: animate-database-reverse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+}
+
+@keyframes animate-database {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 2300;
+  }
+  80% {
+    stroke-dashoffset: 4600;
+  }
+
+  100% {
+    stroke-dashoffset: 4600;
+  }
+}
+@keyframes animate-database-reverse {
+  0% {
+    stroke-dashoffset: 4600;
+  }
+  40% {
+    stroke-dashoffset: 4600;
+  }
+  80% {
+    stroke-dashoffset: 2300;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes animate-database {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 2300;
+  }
+  80% {
+    stroke-dashoffset: 4600;
+  }
+
+  100% {
+    stroke-dashoffset: 4600;
+  }
+}
+
+.icon-box {
+  -webkit-transition: background-size 0.4s ease;
+  transition: background-size 0.4s ease;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      color-stop(62%, transparent),
+      color-stop(0, #fff87e)
+    )
+    center center/0% 75% no-repeat;
+  background: linear-gradient(to bottom, #fff87e 62%, #fff87e 0) center
+    center/0% 75% no-repeat;
+}
+.icon-box:hover {
+  background-size: 100% 100%;
+}
