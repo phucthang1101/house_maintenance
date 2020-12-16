@@ -90,14 +90,14 @@ const Projects = () => {
                     alt='Living Room Staircases'
                   />
                 </div>
-                <div class='single-project__info'>
-                  <div class='single-project__info-back'>
+                <div className='single-project__info'>
+                  <div className='single-project__info-back'>
                     <h4>Living Room Staircases</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                       sed diam nonummy nibh euismod...{' '}
                     </p>
-                    <div class='single-project__link'>View</div>
+                    <div className='single-project__link'>View</div>
                   </div>
                 </div>
               </a>
@@ -112,14 +112,14 @@ const Projects = () => {
                     alt='Living Room Staircases'
                   />
                 </div>
-                <div class='single-project__info'>
-                  <div class='single-project__info-back'>
+                <div className='single-project__info'>
+                  <div className='single-project__info-back'>
                     <h4>Living Room Staircases</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                       sed diam nonummy nibh euismod...{' '}
                     </p>
-                    <div class='single-project__link'>View</div>
+                    <div className='single-project__link'>View</div>
                   </div>
                 </div>
               </a>
@@ -134,14 +134,14 @@ const Projects = () => {
                     alt='Living Room Staircases'
                   />
                 </div>
-                <div class='single-project__info'>
-                  <div class='single-project__info-back'>
+                <div className='single-project__info'>
+                  <div className='single-project__info-back'>
                     <h4>Living Room Staircases</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                       sed diam nonummy nibh euismod...{' '}
                     </p>
-                    <div class='single-project__link'>View</div>
+                    <div className='single-project__link'>View</div>
                   </div>
                 </div>
               </a>
@@ -158,14 +158,14 @@ const Projects = () => {
                     alt='Living Room Staircases'
                   />
                 </div>
-                <div class='single-project__info'>
-                  <div class='single-project__info-back'>
+                <div className='single-project__info'>
+                  <div className='single-project__info-back'>
                     <h4>Living Room Staircases</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                       sed diam nonummy nibh euismod...{' '}
                     </p>
-                    <div class='single-project__link'>View</div>
+                    <div className='single-project__link'>View</div>
                   </div>
                 </div>
               </a>
@@ -180,14 +180,14 @@ const Projects = () => {
                     alt='Living Room Staircases'
                   />
                 </div>
-                <div class='single-project__info'>
-                  <div class='single-project__info-back'>
+                <div className='single-project__info'>
+                  <div className='single-project__info-back'>
                     <h4>Living Room Staircases</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                       sed diam nonummy nibh euismod...{' '}
                     </p>
-                    <div class='single-project__link'>View</div>
+                    <div className='single-project__link'>View</div>
                   </div>
                 </div>
               </a>
@@ -202,14 +202,14 @@ const Projects = () => {
                     alt='Living Room Staircases'
                   />
                 </div>
-                <div class='single-project__info'>
-                  <div class='single-project__info-back'>
+                <div className='single-project__info'>
+                  <div className='single-project__info-back'>
                     <h4>Living Room Staircases</h4>
                     <p>
                       Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
                       sed diam nonummy nibh euismod...{' '}
                     </p>
-                    <div class='single-project__link'>View</div>
+                    <div className='single-project__link'>View</div>
                   </div>
                 </div>
               </a>

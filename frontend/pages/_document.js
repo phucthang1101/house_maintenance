@@ -20,6 +20,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;display=swap'
             rel='stylesheet'
           ></link>
+         
 
           <link
             rel='stylesheet'
@@ -67,13 +68,14 @@ class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-
           <NextScript />
+         
 
           {/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script> */}
           {/* <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'></script> */}
           {/* <script src='https://alexandrebuffet.fr/codepen/slider/slick-animation.min.js'></script> */}
         </body>
+        
       </Html>
     );
   }

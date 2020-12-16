@@ -1,0 +1,148 @@
+.main-content__wrapper {
+  position: relative;
+  z-index: 100;
+}
+.main-content__image {
+  background: url(https://www.mkcsroofing.com/site/wp-content/uploads/inspecting-repairing-roof.jpg);
+  background-size: cover;
+  background-position: center -42px;
+}
+@media (min-width: 1200px) {
+  .main-content__wrapper .container {
+    max-width: 1170px;
+  }
+}
+.left-image__wrapper {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+.left-image {
+  height: auto;
+  width: 100%;
+}
+.main-content__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(41, 42, 46);
+  margin-top: -70px;
+  padding: 120px 80px;
+  color: white;
+}
+.content-heading-wrapper {
+  padding-left: 29px;
+  margin-bottom: 21px;
+  position: relative;
+}
+.heading-title h2 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 46px;
+  color: white;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+.heading-subtitle h4 {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+  color: #f06157;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 6.4px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  display: block;
+  margin-bottom: 5px;
+}
+.content-heading-wrapper::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 6px;
+  top: 0%;
+  height: 95%;
+  background-color: #f23d33;
+  border-color: rgba(122, 122, 122, 0.26);
+  left: 0;
+  margin-left: 0;
+}
+.panel-heading {
+  background-color: #fff;
+  border-color: #abaeb1;
+  padding: 14px 20px;
+  outline: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  color: #ff8383;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  margin: 0;
+}
+.panel-title {
+}
+.panel-title span {
+  color: #367714;
+}
+.panel-body {
+  max-height: 0;
+  font-family: 'Poppins', Tahoma, Geneva, sans-serif;
+  font-weight: 400;
+
+  color: #8d9297;
+  padding: 14px 20px 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-size: 2rem;
+  line-height: 3.5rem;
+}
+
+.panel-active,
+.panel-heading:hover {
+  background-color: #fff;
+}
+
+.counters {
+  padding: 40px 20px 0;
+}
+
+.counters .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counters .counter {
+  text-align: center;
+  font-size: 45px;
+}
+
+@media (max-width: 700px) {
+  .counters .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .counters .container > div:nth-of-type(1),
+  .counters .container > div:nth-of-type(2) {
+    border-bottom: 1px lightskyblue solid;
+    padding-bottom: 20px;
+  }
+}
+
+.content-counters__wrapper h3 {
+  display: inline-block;
+}
+.content-counters__wrapper span,
+.content-counters__wrapper p {
+  color: #ff8383;
+}
+.years-counter p {
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 5px;
+}

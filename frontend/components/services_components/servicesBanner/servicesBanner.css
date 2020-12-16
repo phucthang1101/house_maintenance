@@ -1,0 +1,53 @@
+.services-banner__wrapper {
+  position: relative;
+  height: 100vh;
+  background-position: center;
+  z-index: 1000;
+}
+.services-banner-layer {
+  background-color: rgb(255 255 255 / 85%);
+  opacity: 0.05;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.services-banner-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -59px;
+  margin-left: -400px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.services-banner-content .subtitle {
+  color: #f06157;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+
+  font-size: 3rem;
+
+  line-height: 1rem;
+  display: block;
+  margin-bottom: 9px;
+}
+.services-banner-content .title {
+  font-size: 4.75rem;
+  line-height: 5.25rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: 100;
+}
+.services-banner-content .animated {
+}
+.testing {
+  color: red;
+  font-size: 50px;
+}

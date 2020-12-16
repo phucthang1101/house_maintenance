@@ -1,3 +1,6 @@
+a:hover{
+  text-decoration: none;
+}
 .header-top.home-five {
   background: #1d1d1d;
 
@@ -127,7 +130,7 @@
   background: black;
   padding-top: 0;
   padding-bottom: 0;
-  width: 100vw;
+  /* width: 100vw; */
 }
 .header-navigation__list {
   height: 100%;
@@ -189,4 +192,289 @@
   left: 0;
   width: 100vw;
   z-index: 999;
+}
+
+/*Navbar */
+@media (min-width: 768px) {
+  .dropdown:hover {
+    background: #e7e7e7;
+  }
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+  }
+}
+
+/*
+ * The following is needed since the dropdowns are <div> elements instead
+ * of <a> elements
+ */
+.nav > li > div {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  cursor: default;
+}
+.navbar-nav > li > div {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 20px;
+}
+.navbar-default .navbar-nav > li > div {
+  color: rgb(119, 119, 119);
+}
+.navbar-collapse.collapse {
+  display: none;
+}
+.dropdown-open {
+  background: #e7e7e7;
+}
+#navbar button {
+  z-index: 999;
+}
+#navbar button span {
+  background: red;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg.header-navigation .navbar-collapse {
+    display: block !important;
+  }
+}
+
+/*******************************************************************************/
+/* HEADER
+/*******************************************************************************/
+
+.fixed-wrap {
+  position: fixed;
+  top: 25px;
+  right: 20px;
+  z-index: 2000;
+  width: 15%;
+}
+.fixed-wrap .higher {
+  z-index: 3500;
+}
+
+.site-header {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  left: 20px;
+  z-index: 3000;
+}
+.site-header__controls {
+  float: right;
+  padding: 10px;
+  border: solid 1px #fff;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.site-header__controls__search {
+  border-right: solid 1px #fff;
+  border-right: solid 1px rgba(255, 255, 255, 0.6);
+  background-position: 40% 50%;
+  background-image: url('https://www.stortford-interiors.com/wp-content/themes/stortford-interiors/images/search-icon.svg');
+  -webkit-background-size: 14px 14px;
+  -moz-background-size: 14px 14px;
+  -o-background-size: 14px 14px;
+  background-size: 14px 14px;
+}
+.site-header__controls__menu {
+  background-position: 62% 50%;
+  background-image: url('https://www.stortford-interiors.com/wp-content/themes/stortford-interiors/images/menu-icon.svg');
+  -webkit-background-size: 20px 14px;
+  -moz-background-size: 20px 14px;
+  -o-background-size: 20px 14px;
+  background-size: 20px 14px;
+}
+.site-header__controls__search,
+.site-header__controls__menu {
+  display: block;
+  float: left;
+  width: 52px;
+  height: 42px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.site-header__controls.has-background {
+  background: #292a2e;
+}
+.site-menu__close {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 25px;
+  right: 20px;
+  background-color: #810c00;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(https://www.stortford-interiors.com/wp-content/themes/stortford-interiors/images/close.svg);
+  -webkit-background-size: 16px 16px;
+  -moz-background-size: 16px 16px;
+  -o-background-size: 16px 16px;
+  background-size: 16px 16px;
+  z-index: 500;
+  cursor: pointer;
+}
+.site-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  visibility: hidden;
+  -webkit-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+}
+.site-menu__visible {
+  visibility: visible;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+.site-menu__half {
+  width: 50%;
+  float: right;
+  background: #bf0800;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  min-height: 690px;
+  height: 100vh;
+}
+.left-half__project {
+  float: left;
+  background: none;
+  -webkit-transform: translate(0, 200%);
+  -moz-transform: translate(0, 200%);
+  -ms-transform: translate(0, 200%);
+  -o-transform: translate(0, 200%);
+  transform: translate(0, 200%);
+  -webkit-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -moz-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -ms-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.site-menu__visible .left-half__project {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+.site-menu__left-halft-link {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  text-align: right;
+}
+.site-menu__left-halft-link span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 4px;
+  text-transform: none;
+  padding-right: 212px;
+  text-align: left;
+}
+.site-menu__right-half {
+}
+.nav-menu__wrapper {
+  padding: 90px 70px 70px 70px;
+}
+.menu-item {
+  list-style: none;
+}
+.site-menu__nav .menu-item {
+}
+.site-menu__nav .menu-item > a {
+  color: #f06157;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.services-sub-menu {
+  overflow: hidden;
+  max-height: 250px;
+  transition: all 0.5s ease-out;
+  display: block;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+/* }
+.menu-item.item-services:hover .services-sub-menu {
+  max-height: 250px;
+  transition: all 0.5s ease-out;
+  display: block;
+} */
+@media (max-width: 1024px) {
+  .services-sub-menu .active-sub-menu {
+    max-height: 250px;
+    transition: all 0.5s ease-out;
+    display: block;
+  }
+}
+.services-sub-menu a {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+}
+.services-sub-menu__wrap {
+  margin-bottom: 10px;
+}
+.services-sub-menu__link.first{
+
+}
+.services-sub-menu__link.first:before {
+  display: none;
+}
+.services-sub-menu a:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #810C00;
+  border-radius: 150%;
+  left: -1px;
+  top: 47%;
+}
+.services-sub-menu__title {
+  color: #323337;
+  padding-left: 0;
+  display: inline-block;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.services-sub-menu__link {
+  color: #fff;
+}
+.services-sub-menu__link:hover {
+  color: #000;
+}
+
+.current_page_item a {
+  color: #fff !important;
 }

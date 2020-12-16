@@ -133,7 +133,7 @@ const RequestForm = (props) => {
                     onChange={uploadMultipleFiles}
                     multiple
                   />
-                  <label for='files'>Capture your problems</label>
+                  <label htmlFor='files'>Capture your problems</label>
                   <div className='form-group multi-preview'>
                     {(imgArr || []).map((url) => (
                       <img src={url} alt='...' />
@@ -178,7 +178,7 @@ const RequestForm = (props) => {
                         </div>
                       </li>
                       <li>
-                      <i class="fa fa-clock-o" aria-hidden="true"></i>
+                      <i className="fa fa-clock-o" aria-hidden="true"></i>
 
                         <div className='fleft service_time'>
                           Monday – Friday : 800 – 1900

@@ -1,0 +1,106 @@
+@media (min-width: 1200px) {
+  .container.stragety-wrapper {
+    max-width: 1170px;
+  }
+}
+.city-sketch-bg {
+  padding: 70px 100px 0;
+  position: relative;
+
+  background-image: url(/static/images/city_sketch_bg_2.jpg);
+  background-position: 10% 100%;
+  background-repeat: repeat-x;
+}
+.bg-layer {
+  opacity: 0.74;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+.stagety-card__wrapper {
+  position: relative;
+}
+.visson__column-inner {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.vission-content__wrapper {
+  -webkit-box-shadow: 0 0 25px 0 rgba(41, 61, 88, 0.06);
+  -moz-box-shadow: 0 0 25px 0 rgba(41, 61, 88, 0.06);
+  box-shadow: 0 0 25px 0 rgba(41, 61, 88, 0.06);
+  z-index: 3;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.vision-content {
+  padding: 20px;
+  border-color: transparent;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1em;
+}
+.vision-icon {
+  color: #fff;
+  font-size: 30px !important;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.vision-icon:before {
+}
+.vision-body {
+  padding-top: 1.8em;
+}
+.vision-title,
+.vision-description {
+  text-align: center;
+}
+
+.vision-title h2 {
+  color: #182333;
+  font-size: 20px;
+  line-height: 27px;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  margin: 0.5em 0;
+}
+.vision-description p {
+  color: #8d9297;
+  line-height: 27px;
+  font-size: 1em;
+}
+.vision-heading {
+  width: 5.1em;
+  height: 5.1em;
+  border-radius: 50%;
+  background-color: #ff6464;
+  max-width: 100%;
+  line-height: 2.15em;
+  margin: auto;
+  position: relative;
+}
+.about-stragety__content-half {
+  margin-top: -70px;
+  z-index: 101;
+  position: relative;
+  background: white;
+  color: white;
+
+}
+.about-stragety__image-half {
+  background: url(https://jobs.northcraftservices.com/RES/img/ext/join-team.jpg);
+  background-size: cover;
+  background-position: center;
+}

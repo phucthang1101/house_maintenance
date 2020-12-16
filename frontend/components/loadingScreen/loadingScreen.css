@@ -1,0 +1,147 @@
+.loader_bg {
+  position: fixed;
+  z-index: 9999999;
+  background: red;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+}
+.loader_bg2{
+    position: fixed;
+    z-index: 999999;
+    background: black;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+}
+.loader {
+  border: 0 solid transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+}
+
+.loader:before,
+.loader:after {
+  content: '';
+  border: 1em solid white;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+
+.loader:before {
+  animation-delay: 0.5s;
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.to-hide {
+  -webkit-animation: hide 2s forwards;
+  animation: hide 2s forwards;
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  100% {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+.transition-slide-enter {
+    transform: translateX(0);
+    transition: transform 500ms ease-out;
+}
+
+
+.transition-slide-exit {
+    transform: translateX(100%);
+    transition: transform 500ms ease-in;
+}
+
+
+.transition-slide-enter2 {
+    transform: translateX(0);
+    transition: transform 300ms ease-out;
+}
+
+
+.transition-slide-exit2 {
+    transform: translateX(100%);
+    transition: transform 600ms ease-in;
+}
+
+
+.loader_bg.in {
+    animation: in 0.8s both;
+    -webkit-animation: in 0.8s both;
+  }
+  
+.loader_bg.out {
+    animation: out 0.8s both;
+    -webkit-animation: out 0.8s both;
+  }
+  
+.loader_bg2.in2 {
+    animation: in 0.4s both;
+    -webkit-animation: in 0.4s both;
+  }
+  
+.loader_bg2.out2 {
+    animation: out 1.2s both;
+    -webkit-animation: out 1.2s both;
+  }
+  
+  @-webkit-keyframes in {
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes in {
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @-webkit-keyframes out {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes out {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  

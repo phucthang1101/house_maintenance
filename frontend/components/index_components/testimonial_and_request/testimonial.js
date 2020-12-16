@@ -133,7 +133,7 @@ const Testimonial = () => {
                     <img src={testimonial.imgSrc} alt='' />
                   </div>
                 </div>
-                <div class='type-writter wrapper testimonial-slider__caption'>
+                <div className='type-writter wrapper testimonial-slider__caption'>
                   <h5 id={`h5-writter-${index}`}></h5>
                   <p id={`p-writter-${index}`}></p>
 
@@ -145,11 +145,11 @@ const Testimonial = () => {
             ))}
         </div>
 
-        <div class='request-form-banner row mx-auto'>
+        <div className='request-form-banner row mx-auto'>
           <h2>If You Need Help ... Contact Us &amp; Get Quote</h2>
 
           <a href='#' onClick={(e) => toggleOpenRequestForm(e)}>
-            Contact us <i class='fa fa-angle-double-right'></i>
+            Contact us <i className='fa fa-angle-double-right'></i>
           </a>
         </div>
       </div>

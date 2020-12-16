@@ -3,17 +3,11 @@ import './footer.css';
 const Footer = () => {
   return (
     <React.Fragment>
-      <footer className='row'>
-        <div className='row m0'>
+      <footer className='row mx-0'>
+        <div className='row mx-auto'>
           <div className='container'>
-            <div className='contact_banner row m0'>
-              <h2>If You Need Help ... Contact Us &amp; Get Quote</h2>
-
-              <a href='#'>
-                Contact us <i className='fa fa-angle-double-right'></i>
-              </a>
-            </div>
-            <div className='row footer_sidebar'>
+           
+            <div className='row footer_sidebar mx-0'>
               <div
                 className='widget widget1 about_us_widget col-sm-6 col-lg-3'
                 style={{minHeight: '268px'}}

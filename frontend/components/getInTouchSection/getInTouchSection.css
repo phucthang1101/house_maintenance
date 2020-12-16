@@ -1,0 +1,158 @@
+.get-in-touch-box {
+  background: #fff;
+  padding: 30px 0;
+  color: #fff;
+  padding: 20px;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+.get-in-touch__btn {
+  width: 100%;
+
+  position: relative;
+  display: inline-block;
+  padding: 60px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.get-in-touch__btn:before,
+.get-in-touch__btn:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #252525;
+}
+.get-in-touch__btn:before {
+  top: 0;
+}
+.get-in-touch__btn:after {
+  bottom: 0;
+}
+.get-in-touch__btn:hover > * > *:before,
+.get-in-touch__btn:hover > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.get-in-touch__btn:hover > * > * > *:before,
+.get-in-touch__btn:hover > * > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.get-in-touch__btn > *:before,
+.get-in-touch__btn > *:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #252525;
+}
+.get-in-touch__btn > *:before {
+  left: 0;
+}
+.get-in-touch__btn > *:after {
+  right: 0;
+}
+.get-in-touch__btn > * > *:before,
+.get-in-touch__btn > * > *:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  height: 5px;
+  width: 100%;
+  background-color: #f97169;
+}
+.get-in-touch__btn > * > *:before {
+  top: 0;
+  -webkit-transform: translate3d(-105%, 0, 0);
+  transform: translate3d(-105%, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.get-in-touch__btn > * > *:after {
+  bottom: 0;
+  -webkit-transform: translate3d(105%, 0, 0);
+  transform: translate3d(105%, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.get-in-touch__btn > * > * > *:before,
+.get-in-touch__btn > * > * > *:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  height: 100%;
+  width: 5px;
+  background-color: #f97169;
+}
+.get-in-touch__btn > * > * > *:before {
+  left: 0;
+  -webkit-transform: translate3d(0, 105%, 0);
+  transform: translate3d(0, 105%, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.get-in-touch__btn > * > * > *:after {
+  right: 0;
+  -webkit-transform: translate3d(0, -105%, 0);
+  transform: translate3d(0, -105%, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.get-in-touch__content {
+  text-align: center;
+  position: relative;
+}
+.get-in-touch__content h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 6.4px;
+  color: #f97169;
+  font-size: 3.1rem;
+  line-height: 3.5rem;
+  margin-bottom: 40px;
+}
+.get-in-touch__content p {
+  font-size: 2rem;
+  color: black;
+  line-height: 3.2rem;
+  font-family: 'Calibre', 'Helvetica', 'Arial', sans-serif;
+
+}
+.get-in-touch__content .contact-link__wrapper {
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  width: fit-content;
+  margin: auto;
+  color: black;
+  transition: all .25s ease-in-out;
+  margin-top:20px
+}
+
+.get-in-touch__content .contact-link {
+  padding-right: 20px;
+  color:black;
+  transition: all .25s ease-in-out;
+}
+.contact-link__wrapper:hover .contact-link,
+.contact-link__wrapper:hover {
+  color: #f97169;
+  border-color: #f97169;
+}

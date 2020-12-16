@@ -1,0 +1,33 @@
+.single-service-wrapper,
+.single-service__half {
+  position: relative;
+  z-index: 50;
+}
+
+.half-image {
+  background-size: cover;
+  background-position: center;
+  z-index: 500;
+}
+.half-content .negative-margin {
+  position: relative;
+  margin-top: -70px;
+  padding-top: 70px;
+ 
+}
+.content-wrapper p {
+  font-size: 1.7rem;
+  line-height: 1.9;
+}
+.content-wrapper h2 {
+  color: #f3b0ac;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 3rem;
+  letter-spacing: 8px;
+  margin-top: 1em;
+}
+
+.single-service__half .content-wrapper {
+  padding: 0px 120px 90px 120px;
+}

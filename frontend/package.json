@@ -12,10 +12,13 @@
   "license": "ISC",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "framer-motion": "^2.9.5",
     "next": "^9.5.2",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-render-html": "^0.6.0",
+    "react-reveal": "^1.2.2",
     "react-slick": "^0.26.1",
     "slick-carousel": "^1.8.1"
   },
