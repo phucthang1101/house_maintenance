@@ -53,8 +53,9 @@
     margin-top: 28px;
     color: #fb948e !important;
     font-size: 1.7rem;
-    text-transform: capitalize;
+    text-transform: uppercase;
     cursor: pointer;
+    font-weight: 500;
 }
 .service-card__heading span {
   font-size: 1.5em;

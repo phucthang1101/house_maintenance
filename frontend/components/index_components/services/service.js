@@ -1,145 +1,112 @@
 import React from 'react';
 import './service.css';
+import { useState, useEffect } from 'react';
+import { listCategories } from '../../../actions/categoryAction';
+import Link from 'next/link';
 
 const Service = () => {
+  const [categoriesList, setCategoriesList] = useState([]);
+
+  useEffect(() => {
+    loadCategoriesList();
+  }, []);
+
+  const loadCategoriesList = () => {
+    listCategories().then((data) => {
+      if (data.error) {
+        console.log(data.error);
+      } else {
+        setCategoriesList(data);
+      }
+    });
+  };
+
+  const serviceItemSlideDown = (e) => {
+  //  console.log(e.currentTarget);
+
+    let serviceItem = e.currentTarget;
+
+    serviceItem.classList.toggle('service-item-active');
+
+    var serviceItemExcerpt = document.querySelector(
+      '#' + serviceItem.id + ' .service-item__excerpt'
+    );
+    var serviceItemExcerpt1 = document.querySelector('#service-item-1');
+  //  console.log(serviceItemExcerpt1.style.zIndex);
+  //  console.log(serviceItemExcerpt);
+    if (serviceItemExcerpt.style.maxHeight) {
+      serviceItemExcerpt.style.maxHeight = null;
+    } else {
+//console.log(serviceItemExcerpt.scrollHeight);
+      serviceItemExcerpt.style.maxHeight =
+        serviceItemExcerpt.scrollHeight + 'px';
+    }
+  };
+
+  function truncateString(str, num) {
+    if (str.length > num) {
+      return str.slice(0, num) + '...';
+    } else {
+      return str;
+    }
+  }
+
+  const renderCategoryArea = () => {
+    return categoriesList.map((category, index) => {
+      return (
+        <div
+          key={index}
+          className='col-12 col-md-4 service-item'
+          id={`service-item-${index+1}`}
+          style={{ backgroundImage: `url(${category.photo})` }}
+          onMouseEnter={(e) => serviceItemSlideDown(e)}
+          onMouseLeave={(e) => serviceItemSlideDown(e)}
+        >
+          <div className='service-item__overlay'></div>
+          <div className='table-center'>
+            <div className='table-center__cell'>
+              <div className='service-item__content'>
+                <h2>
+                  <a href='/services'>{category.name}</a>
+                </h2>
+                <div className='service-item__excerpt'>
+                  <p className='intro'>
+                    {truncateString(category.categoryDesc, 80)}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='service-item__links'>
+            {category.services.map((service, index) => {
+              return (
+                <div key={index} className='link-wrapper'>
+                  <Link href={`/services/${service.slug}`}>
+                    <a>
+                      {service.name} <span className='ti-arrow-right'></span>
+                    </a>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    });
+  };
+
   return (
     <React.Fragment>
       <div className='container-fluid service-container'>
-        <h1 className='service-title'>Services</h1>
-        <h3 className='service-subtitle'>House Repairing & Maintenance</h3>
-        <div className='row mx-0 service-collection'>
-          <div className='col-12 col-md-4 service-item'>
-            <a className='service-item__link' href='#'>
-              <div className='service-item__section'>
-                <div className='service-item__header'>
-                  <div className='service-item__icon service-icon__bg fontello-icon-tools'></div>
-                  <h5 className='service-item__name'>Maintenance</h5>
-                </div>
-              </div>
-              <div className='service-item__section'>
-                <div className='service-item__body '>
-                  <div className='service-item__content'>
-                    <p>
-                      Garage Door Repair. Carpentry. Termite Damage <br />
-                      Repairs. Tub and shower caulking. Doors. <br />
-                      Fences. Weatherproofing…
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className='col-12 col-md-4 service-item'>
-            <a className='service-item__link' href='#'>
-              <div className='service-item__section'>
-                <div className='service-item__header'>
-                  <div className='service-item__icon service-icon__bg fontello-icon-wired'></div>
-                  <h5 className='service-item__name'>Wiring</h5>
-                </div>
-              </div>
-              <div className='service-item__section'>
-                <div className='service-item__body '>
-                  <div className='service-item__content'>
-                    <p>
-                      Electrical. Cable TV. Internet. Network. Low
-                      <br />
-                      Voltage. Door Bells. Home Theater. Sprinkler
-                      <br />
-                      Systems. Phone Jacks. Computers.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className='col-12 col-md-4 service-item'>
-            <a className='service-item__link' href='#'>
-              <div className='service-item__section'>
-                <div className='service-item__header'>
-                  <div className='service-item__icon service-icon__bg fontello-icon-construction3'></div>
-                  <h5 className='service-item__name'>Tiling</h5>
-                </div>
-              </div>
-              <div className='service-item__section'>
-                <div className='service-item__body '>
-                  <div className='service-item__content'>
-                    <p>
-                      Kitchens. Baths. Back Splashes. Floors. <br />
-                      Grout. Grout Repair. Grout sealing.
-                      <br />
-                      Tile repair. Showers. Walls
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+        <div className='title-wrapper'>
+          <h1 className='service-title'>Services</h1>
+          <h3 className='service-subtitle'>House Repairing & Maintenance</h3>
         </div>
-        <div className='row mx-0 service-collection'>
-          <div className='col-12 col-md-4 service-item'>
-            <a className='service-item__link' href='#'>
-              <div className='service-item__section'>
-                <div className='service-item__header'>
-                  <div className='service-item__icon service-icon__bg fontello-icon-widescreen'></div>
-                  <h5 className='service-item__name'>Audio/Visual</h5>
-                </div>
-              </div>
-              <div className='service-item__section'>
-                <div className='service-item__body '>
-                  <div className='service-item__content'>
-                    <p>
-                    Home Theater Installation. Flat Panel TV <br />
-                    Installation. Projectors. Sound Systems. <br />
-                    Surround Sound.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className='col-12 col-md-4 service-item'>
-            <a className='service-item__link' href='#'>
-              <div className='service-item__section'>
-                <div className='service-item__header'>
-                  <div className='service-item__icon service-icon__bg fontello-icon-electric38'></div>
-                  <h5 className='service-item__name'>Electrical</h5>
-                </div>
-              </div>
-              <div className='service-item__section'>
-                <div className='service-item__body '>
-                  <div className='service-item__content'>
-                    <p>
-                    Switches. Dimmers. Outlets. Recessed <br />
-                    Lighting. Light Fixture Installation. Ceiling<br />
-                    Fans. Ground Fault Outlet Installation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className='col-12 col-md-4 service-item'>
-            <a className='service-item__link' href='#'>
-              <div className='service-item__section'>
-                <div className='service-item__header'>
-                  <div className='service-item__icon service-icon__bg fontello-icon-faucet1'></div>
-                  <h5 className='service-item__name'>Plumbing</h5>
-                </div>
-              </div>
-              <div className='service-item__section'>
-                <div className='service-item__body '>
-                  <div className='service-item__content'>
-                    <p>
-                    Leaks Repaired. Faucet Installation. Toilet <br />
-                    Repair/Replacement. Faucet Leaks. Shut Off<br />
-                    Valves. Kitchens. Toilet Repairs…
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
+
+        <div className='row mx-5 service-collection'>
+          {renderCategoryArea()}
         </div>
+
       </div>
     </React.Fragment>
   );

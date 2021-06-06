@@ -49,7 +49,7 @@ const AboutMainContent = () => {
           // Lower increase to slow and higher to slow
           const increase = target / speed;
 
-          console.log('increase: ', increase);
+         // console.log('increase: ', increase);
           //console.log('count: ', count);
 
           // Check if target is reached

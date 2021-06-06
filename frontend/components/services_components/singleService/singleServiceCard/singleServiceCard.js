@@ -18,7 +18,7 @@ const SingleServiceCard = (props) => {
             className='col-12 col-md-6 single-service__half half-image px-0'
             style={{
               backgroundSize: 'cover',
-              backgroundImage: `url(${props.singleService.backgroundImageURL})`,
+              backgroundImage: `url(${props.singleService.photo})`,
             }}
           ></div>
         </Fade>
@@ -33,7 +33,7 @@ const SingleServiceCard = (props) => {
               }}
             >
               <div className='content-wrapper'>
-                {renderHtml(props.singleService.content)}
+                {renderHtml(props.singleService.body)}
                 {/* <h2 className='mt-0'>New shower door installation</h2>
               <p className='main-content'>
                 Custom shower doors are a great way to dramatically upgrade your

@@ -16,6 +16,14 @@ const Testimonial = () => {
     ptextCount = 0,
     h6textCount = 0
   ) => {
+    //   console.log(e.currentTarget)
+    //let currentTarget = e.currentTarget;
+
+    let currentTarget = document.getElementById(`testimonial-img-${index}`);
+    if (!currentTarget.classList.contains('noevent')) {
+      currentTarget.classList += ' noevent ';
+    }
+
     let checkItemActive = document
       .getElementById(`testimonial-img-${index}`)
       .classList.contains('active-item');
@@ -81,8 +89,8 @@ const Testimonial = () => {
     {
       h5text: 'I am very happy with their work',
       ptext:
-        'Hello Codepedfdfdfdfdfn!!! Adipiscing elit, sed do eiusmod tempor incididunt ut labore ',
-      h6text: '- Michale John',
+        'I first hired Mitch as a Painting Contractor Finisher in Toronto in 2011. He soon became one of our Contract Supervisors who was selected out of approximately 30 men and women that worked as painting contractors. Mitch was an asset to his team and our company and only wish him well in his future. ',
+      h6text: '- Argo and Jerry Painting Contractors, Toronto',
       imgSrc:
         'http://shtheme.net/demosd/handylexo5/wp-content/uploads/2018/10/testimonial3.jpg',
     },
@@ -105,7 +113,7 @@ const Testimonial = () => {
   ];
   const toggleOpenRequestForm = (e) => {
     e.preventDefault();
-    console.log('outside')
+    console.log('outside');
     setOpenRequestForm(!openRequestForm);
   };
   return (
@@ -144,13 +152,24 @@ const Testimonial = () => {
               </div>
             ))}
         </div>
+        <div className='container request-form__wrapper'>
+          <div className='request-form-banner row mx-auto'>
+            <section className='get-in-touch-box'>
+              <a href='/contact' className='get-in-touch__btn'>
+                <span>
+                  <span>
+                    <span>
+                      <h2>If You Need Help ... Contact Us &amp; Get Quote</h2>
 
-        <div className='request-form-banner row mx-auto'>
-          <h2>If You Need Help ... Contact Us &amp; Get Quote</h2>
-
-          <a href='#' onClick={(e) => toggleOpenRequestForm(e)}>
-            Contact us <i className='fa fa-angle-double-right'></i>
-          </a>
+                      <a className='contact-us-btn'>
+                        Contact us <i className='fa fa-angle-double-right'></i>
+                      </a>
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </section>
+          </div>
         </div>
       </div>
       <section

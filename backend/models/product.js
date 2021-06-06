@@ -9,6 +9,12 @@ const productSchema = new mongoose.Schema(
       required: true,
       maxlength: 32,
     },
+    slogan:{
+      type: String,
+      trim: true,
+      required: true,
+      maxlength: 200,
+    },
     slug: {
       type: String,
       index: true,
@@ -26,21 +32,24 @@ const productSchema = new mongoose.Schema(
     mdesc: {
       type: String,
     },
-    price: {
-      type: Number,
+    overviewTitle:{
+      type: String,
       trim: true,
       required: true,
-      maxlength: 32,
+      maxlength: 2000,
     },
-    // sửa reference to cateogy schema
-    categories: [{ type: ObjectId, ref: 'Category', require: true }],
+    overviewDesc: {
+      type: {},
 
-    quantity: {
-      type: Number,
+      required: true,
+      min: 20,
+      max: 2000000,
     },
-    sold: {
-      type: Number,
-      default: 0,
+    svgIcon:{
+      type: String,
+      trim: true,
+      required: true,
+    
     },
     photo: {
       type: String,
@@ -52,10 +61,7 @@ const productSchema = new mongoose.Schema(
       required: false,
       maxlength: 2000,
     },
-    shipping: {
-      require: false,
-      type: Boolean,
-    },
+    singleServices: [{ type: ObjectId, ref: 'SingleService', require: true }],
     showing: {
       type: Boolean,
       default: false,

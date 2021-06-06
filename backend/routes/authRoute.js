@@ -1,16 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const {
-  signup,
-  signin,
-  signout,
-  requireSignin,
-} = require('../controllers/authController');
+const { signup,signin,signout,requireSignin } = require('../controllers/authController');
 
-const { userSignupValidator } = require('../validator/index');
+//validators
+const { runValidation } = require('../validators/index');
+const { userSignupValidator,userSigninValidator } = require('../validators/authValidator');
 
-router.post('/signup', userSignupValidator, signup);
-router.post('/signin', signin);
-router.post('/signout', signout);
+router.post('/signup',userSignupValidator,runValidation, signup);
+router.post('/signin',userSigninValidator,runValidation, signin);
+router.get('/signout',signout);
 
+//test
+router.get('/secret',requireSignin,(req,res)=>{
+    res.json({message:'dsds'})
+})
 module.exports = router;

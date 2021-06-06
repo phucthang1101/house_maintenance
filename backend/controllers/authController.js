@@ -1,71 +1,79 @@
 const User = require('../models/user');
-const { errorHandler } = require('../helper/errHandler');
-const jwt = require('jsonwebtoken'); //to generate signed token
-const expressJwt = require('express-jwt'); // authorization check
+const shortId = require('shortid');
+const JWT = require('jsonwebtoken');
+const expressJwt = require('express-jwt');
+
 
 exports.signup = (req, res) => {
-  // console.log(req.body);
+  console.log(req.body);
   User.findOne({ email: req.body.email }).exec((err, user) => {
     if (user) {
       return res.status(400).json({
         error: 'Email is taken',
       });
     }
-  });
-  const user = new User(req.body);
-  user.save((err, user) => {
-    if (err) {
-      return res.status(400).json({
-        err: errorHandler(err),
+
+    const { name, email, password } = req.body;
+
+    let username = shortId.generate();
+    let profile = `${process.env.CLIENT_URL}/profile/${username}`;
+
+    let newUser = new User({ name, email, password, username, profile });
+    newUser.save((err, success) => {
+      if (err) {
+        return res.status(400).json({
+          error: err,
+        });
+      }
+
+      res.json({
+        message: 'Signup success!',
       });
-    }
-    res.json({
-      user,
     });
   });
 };
 
 exports.signin = (req, res) => {
-  //find user base on email
   const { email, password } = req.body;
-
-  User.findOne({ email }, (err, user) => {
-    if (err) {
+  //check if User exits
+  User.findOne({ email }).exec((err, user) => {
+    if (err || !user) {
       return res.status(400).json({
-        err: 'User with that email is not exist. Please try again.',
+        error: 'That email does not exits.Please signup',
       });
     }
-    // if user is found, make sure the email and password match
-    // create authenticate method in User Schema
+    //authenticate
     if (!user.authenticate(password)) {
-      return res.status(401).json({
-        error: 'Email and password do not match',
+      return res.status(400).json({
+        error: 'Authentication fail !',
       });
     }
-    //generate a signed token with user id and secret
-    const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+    //generate a JWT and send to clent
+    const token = JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '1d',
+    });
 
-    //persist the token as 'token' in cookie with expiry date
-    res.cookie('token', token, { expire: new Date() + 9999 });
-
-    // return response with user and token to frontend client
-    const { _id, name, email, role } = user;
-    return res.json({ token, user: { _id, name, email, role } });
+    res.cookie('token', token, { expiresIn: '1d' });
+    const { _id, username, name, email, role } = user;
+    return res.json({
+      token,
+      user: { _id, username, name, email, role },
+    });
   });
 };
 
 exports.signout = (req, res) => {
   res.clearCookie('token');
-  res.json({ message: 'Signout' });
+  res.json({
+    message: 'Signout !',
+  });
 };
 
 exports.requireSignin = expressJwt({
-  secret: process.env.JWT_SECRET,
-  algorithms: ['HS256'],
+  secret: process.env.JWT_SECRET, algorithms: ['HS256'] 
 });
 
 exports.authMiddleware = (req, res, next) => {
- 
   const authUserId = req.user._id;
   User.findById({ _id: authUserId }).exec((err, user) => {
     if (err || !user) {
@@ -79,7 +87,6 @@ exports.authMiddleware = (req, res, next) => {
 };
 
 exports.adminMiddleware = (req, res, next) => {
- // console.log(req)
   const adminUserId = req.user._id;
   User.findById({ _id: adminUserId }).exec((err, user) => {
     if (err || !user) {
@@ -96,4 +103,3 @@ exports.adminMiddleware = (req, res, next) => {
     next();
   });
 };
-

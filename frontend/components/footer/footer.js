@@ -4,18 +4,14 @@ const Footer = () => {
   return (
     <React.Fragment>
       <footer className='row mx-0'>
-        <div className='row mx-auto'>
-          <div className='container'>
-           
-            <div className='row footer_sidebar mx-0'>
-              <div
-                className='widget widget1 about_us_widget col-sm-6 col-lg-3'
-                style={{minHeight: '268px'}}
-              >
+        <div className='row mx-auto w-100'>
+          <div className='container-fluid mx-0'>
+            <div className='row footer_sidebar mx-0 lines'>
+              <div className='widget widget1 about_us_widget col-12 col-lg-4 px-0'>
                 <div id='text-2'>
                   {' '}
-                  <div className='textwidget'>
-                    <p>
+                  <div className='textwidget '>
+                    {/* <p>
                       <a
                         className='logo'
                         href='http://shtheme.net/demosd/handylexo5/'
@@ -25,93 +21,120 @@ const Footer = () => {
                           alt='logo image'
                         />
                       </a>
-                    </p>
+                    </p> */}
+                    <div className='footer__logo-plus-name row mx-0 align-items-center mb-5'>
+                      <div className='logo-container-wrapper col-5 px-0 '>
+                        <div className='l-container'>
+                          <div className='heart-loader'>
+                            <i className='heart fas fa-house-damage'></i>
+                            <i className='hammer fas fa-hammer'></i>
+                            <i className='wrench fas fa-wrench'></i>
+                            <i className='screw-driver fas fa-screwdriver'></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div className='footer__site-name col-7 px-0'>
+                        {' '}
+                        <h2 className='site-header__name'>D.C FINISHER</h2>
+                        <h4 className='site-header__subname'>
+                          Home Repair & Renovating
+                        </h4>
+                      </div>
+                    </div>
+
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                       sed do eiusmod tempor incididunt ut labore et.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et.
                     </p>
-                    <p>
+                   
                       <a className='read_more' href='#'>
                         Read More <i className='fa fa-angle-double-right'></i>
                       </a>
-                    </p>
-                    <div className='social_icon row m0'>
-                      <ul className='nav'>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                      </ul>
+                   
+                   
+                    {/* <div className='social_icon row m0'>
+                  
+                      <div className='social-btns'>
+                        <a className='social-btn facebook' href='#'>
+                          <i className='fa fa-facebook'></i>
+                        </a>
+                        <a className='social-btn twitter' href='#'>
+                          <i className='fa fa-twitter'></i>
+                        </a>
+                        <a className='social-btn google' href='#'>
+                          <i className='fa fa-google'></i>
+                        </a>
+                        <a className='social-btn dribbble' href='#'>
+                          <i className='fa fa-dribbble'></i>
+                        </a>
+                        <a className='social-btn skype' href='#'>
+                          <i className='fa fa-skype'></i>
+                        </a>
+                      </div>{' '}
                     </div>
+                   */}
                   </div>
                 </div>
+                <div className='line'></div>
               </div>
-              <div
-                className='widget widget2 widget_links col-sm-6 col-lg-3'
-                style={{minHeight: '268px'}}
-              >
+              <div className='widget widget2 widget_links col-12 col-lg-4 '>
                 <div id='text-3'>
                   {' '}
                   <div className='textwidget'>
-                    <div className='service-widget'>
-                      <h4 className='widget_title'>our services</h4>
-                      <div className='widget_inner row m0'>
-                        <ul>
-                          <li>
-                            <a href='#'>House Remodeling</a>
-                          </li>
-                          <li>
-                            <a href='#'>Plumbing Services</a>
-                          </li>
-                          <li>
-                            <a href='#'>Wood Flooring</a>
-                          </li>
-                          <li>
-                            <a href='#'>Doors and Windows</a>
-                          </li>
-                          <li>
-                            <a href='#'>Tiling and Painting</a>
-                          </li>
-                        </ul>
+                    <div className='service-widget row mx-0'>
+                      <div className='text-align-center col-6 px-0'>
+                        <h4 className='widget_title'>our services</h4>
+                        <div className='widget_inner row mx-0'>
+                          <ul>
+                            <li>
+                              <a href='#'>House Remodeling</a>
+                            </li>
+                            <li>
+                              <a href='#'>Plumbing Services</a>
+                            </li>
+                            <li>
+                              <a href='#'>Wood Flooring</a>
+                            </li>
+                            <li>
+                              <a href='#'>Doors and Windows</a>
+                            </li>
+                            <li>
+                              <a href='#'>Tiling and Painting</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className='text-align-center col-6 px-0'>
+                        <h4 className='widget_title'>overview</h4>
+                        <div className='widget_inner row mx-0'>
+                          <ul>
+                            <li>
+                              <a href='#'>About</a>
+                            </li>
+                            <li>
+                              <a href='#'>Service</a>
+                            </li>
+                            <li>
+                              <a href='#'>Contact</a>
+                            </li>
+                            <li>
+                              <a href='#'>Terms of Use</a>
+                            </li>
+                            <li>
+                              <a href='#'>Sitemap</a>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className='line'></div>
               </div>
-              <div
-                className='widget widget3 widget_links widget_links2 col-sm-6 col-lg-2'
-                style={{minHeight: '268px'}}
-              >
-                <div id='text-4'>
-                  {' '}
-                  <div className='textwidget'>
-                    <h4 className='widget_title'>Quick Links</h4>
-                    <div className='widget_inner row m0'>
-                      <ul>
-                        <li>
-                          <a href='index.html'>Home</a>
-                        </li>
-                        <li>
-                          <a href='services.html'>Our Services</a>
-                        </li>
-                        <li>
-                          <a href='about.html'>About Us</a>
-                        </li>
-                        <li>
-                          <a href='blog.html'>News</a>
-                        </li>
-                        <li>
-                          <a href='contact.html'>Contact Us</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className='widget widget4 widget_contact col-sm-6 col-lg-4'
-                style={{minHeight: '268px'}}
-              >
+
+              <div className='widget widget4 widget_contact col-sm-6 col-lg-4'>
                 <div id='text-5'>
                   {' '}
                   <div className='textwidget'>
@@ -172,3 +195,33 @@ const Footer = () => {
   );
 };
 export default Footer;
+{
+  /* <div className='widget widget3 widget_links widget_links2 col-sm-6 col-lg-3 '>
+<div id='text-4'>
+  {' '}
+  <div className='textwidget'>
+    <h4 className='widget_title'>Quick Links</h4>
+    <div className='widget_inner row m0'>
+      <ul>
+        <li>
+          <a href='index.html'>Home</a>
+        </li>
+        <li>
+          <a href='services.html'>Our Services</a>
+        </li>
+        <li>
+          <a href='about.html'>About Us</a>
+        </li>
+        <li>
+          <a href='blog.html'>News</a>
+        </li>
+        <li>
+          <a href='contact.html'>Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div className='line'></div>
+</div> */
+}

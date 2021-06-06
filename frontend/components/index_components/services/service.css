@@ -1,15 +1,31 @@
-.service-container{
-    padding: 0% 7%;
+.service-container {
+  padding: 0%;
+  position: relative;
+  background: rgb(231,231,231);
 }
-.service-title{
-    font-size: 4.5em;
-    font-weight: 600;
-    color: black;
-    text-align: center;
-    margin-top: 70px;
+.service-container:before {
+  content: '';
+  z-index: 10;
+  height: 310px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #292a2e;
+  width: 100%;
+}
+.title-wrapper {
+  padding: 50px 0 100px;
+}
+.service-title {
+  font-size: 4.5em;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin-top: 30px;
 }
 .service-subtitle {
-  color: #1a1a1a;
+  color: #ff584d;
   font-weight: 300;
   letter-spacing: 8px;
   text-align: center;
@@ -19,9 +35,178 @@
 .service-item__header {
   position: relative;
 }
-.service-collection{
-    margin-bottom: 70px;
+.service-collection {
+  position: relative;
+  z-index: 100;
 }
+.service-item {
+  background-image: url(https://www.stortford-interiors.com/wp-content/uploads/2016/05/service-corefeature.jpg);
+  position: relative;
+
+  float: left;
+  height: 620px;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
+  z-index: 1000;
+}
+.service-item__overlay {
+  z-index: 150;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.service-item:hover {
+  z-index: 300;
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 20px 2px;
+}
+.service-item__overlay2 {
+  z-index: 1500;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.service-item .table-center {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.service-item .table-center .table-center__cell {
+  vertical-align: middle;
+  display: table-cell;
+}
+.service-item__content {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  position: relative;
+  z-index: 150;
+  padding: 0px 30px;
+}
+.service-item__content h2 {
+  font-size: 3.2rem;
+  margin: 0px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  line-height: 3.2rem;
+  color: rgb(255, 255, 255);
+}
+.service-item h2 a {
+  color: #fff;
+}
+
+.service-item:hover h2 a {
+  color: #f06157;
+}
+.service-item__content .service-item__excerpt {
+  max-height: 0;
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2.8rem;
+  margin: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.service-item:hover::before {
+  width: 100%;
+}
+.service-item::before {
+  content: '';
+  width: 0px;
+  height: 6px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgb(240, 97, 87);
+  transition: all 0.25s ease-in-out 0s;
+}
+.service-item__links {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  z-index: 400;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  visibility: hidden;
+}
+.service-item:hover .service-item__links {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  visibility: visible;
+}
+.service-item__links a {
+  height: 70px;
+  margin-top: 1px;
+  padding: 0 70px 0 30px;
+  color: #fff;
+  line-height: 70px;
+  font-weight: 700;
+  letter-spacing: 4.5px;
+  overflow: hidden;
+  background: linear-gradient(to right,#f06157 , #d8756e 50%,  #f7f7f7 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.service-item__links span {
+  font-size: 1.5em;
+  color: white;
+  line-height: 1.5;
+}
+.service-item__links a:hover,
+.service-item__links a:hover span {
+  background-position: 0 100%;
+  color: #f06157;
+}
+.service-item__links .link-wrapper{
+  background: rgba(41,42,46,0.4);
+  display: block;
+  -webkit-background-size: 20px 7px;
+  -moz-background-size: 20px 7px;
+  -o-background-size: 20px 7px;
+  background-size: 20px 7px;
+  background-position: 90% 50%;
+  background-position: right 30px center;
+  background-repeat: no-repeat;
+}
+/* 
 .service-item__icon.service-icon__bg::before {
   box-sizing: border-box;
   font-size: 50px;
@@ -121,4 +306,4 @@
     letter-spacing: 0.25px;
     font-size: 15px;
     color: #000000bf;
-}
+} */

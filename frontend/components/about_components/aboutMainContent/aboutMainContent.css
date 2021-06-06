@@ -3,7 +3,7 @@
   z-index: 100;
 }
 .main-content__image {
-  background: url(https://www.mkcsroofing.com/site/wp-content/uploads/inspecting-repairing-roof.jpg);
+  background: url('/static/images/about-mainContent-right.jpg');
   background-size: cover;
   background-position: center -42px;
 }

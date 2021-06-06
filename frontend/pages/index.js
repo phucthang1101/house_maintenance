@@ -40,7 +40,7 @@ const index = () => {
         <div ref={controlSwitch} className='controls-switch'></div>
         <About />
         <Service />
-        <Projects />
+       
         <Testimonial />
       </Layout>
     </React.Fragment>

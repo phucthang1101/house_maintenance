@@ -1,15 +1,16 @@
 .testimonial-and-request-container {
-  padding: 65px 0;
-  background: url('http://hr-html.axiomthemes.com/images/testimonials_bg1.jpg');
+  padding: 95px 0;
+  background:#292a2e;
   background-size: cover;
   padding-bottom: 0px;
 }
 .testimonial-title {
-  font-size: 4.5em;
+  font-size: 5.5em;
   font-weight: 600;
-  color: black;
+  color: #545454;
   text-align: center;
   margin: 0 0 1em 0;
+  letter-spacing: 10px;
 }
 .testimonial-container {
   padding: 20px;
@@ -40,18 +41,25 @@
 }
 .testimonial-slider__caption h5 {
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  line-height: 26px;
-  color: #242424;
   margin: 0 0 15px;
-  font-weight: bold;
+  color: #F06157;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-size: 1.8rem;
+  line-height: 16px;
+  line-height: 2rem;
 }
 
 .testimonial-slider__caption p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-  color: #242424;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  margin: 0;
+  font-weight: 400;
+  text-transform: none;
 }
 
 .testimonial-slider__caption h6 {
@@ -200,15 +208,125 @@
   position: relative;
   width: 100%;
 }
+
+.get-in-touch__btn {
+  width: 100%;
+
+  position: relative;
+  display: inline-block;
+  padding: 60px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.get-in-touch__btn:before,
+.get-in-touch__btn:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background-color: #252525;
+}
+.get-in-touch__btn:before {
+  top: 0;
+}
+.get-in-touch__btn:after {
+  bottom: 0;
+}
+.get-in-touch__btn:hover > * > *:before,
+.get-in-touch__btn:hover > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.get-in-touch__btn:hover > * > * > *:before,
+.get-in-touch__btn:hover > * > * > *:after {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.get-in-touch__btn > *:before,
+.get-in-touch__btn > *:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #252525;
+}
+.get-in-touch__btn > *:before {
+  left: 0;
+}
+.get-in-touch__btn > *:after {
+  right: 0;
+}
+.get-in-touch__btn > * > *:before,
+.get-in-touch__btn > * > *:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 9;
+  height: 5px;
+  width: 100%;
+  background-color: #f97169;
+}
+.get-in-touch__btn > * > *:before {
+  top: 0;
+  -webkit-transform: translate3d(-105%, 0, 0);
+  transform: translate3d(-105%, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.get-in-touch__btn > * > *:after {
+  bottom: 0;
+  -webkit-transform: translate3d(105%, 0, 0);
+  transform: translate3d(105%, 0, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.get-in-touch__btn > * > * > *:before,
+.get-in-touch__btn > * > * > *:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  height: 100%;
+  width: 5px;
+  background-color: #f97169;
+}
+.get-in-touch__btn > * > * > *:before {
+  left: 0;
+  -webkit-transform: translate3d(0, 105%, 0);
+  transform: translate3d(0, 105%, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.get-in-touch__btn > * > * > *:after {
+  right: 0;
+  -webkit-transform: translate3d(0, -105%, 0);
+  transform: translate3d(0, -105%, 0);
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .request-form-banner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 75px 24px 60px;
-  background: #e1ba60;
+  background: #fbfbfb;
   position: relative;
   bottom: -40px;
-  max-width: 1140px;
+  padding: 0;
+  width: 90%;
 }
 .request-form-banner h2 {
   font-family: 'Poppins', serif;
@@ -236,12 +354,44 @@
   margin-left: 11px;
 }
 
-.request-form-banner a:hover {
+.request-form-banner .get-in-touch__btn:hover {
   background: #fff;
 
   color: #222;
 }
-
+.request-form-banner .get-in-touch-box {
+  width: 100%;
+  background: #252525;
+  color: #252525;
+  height: 100%;
+  padding: 0;
+}
+.request-form-banner .get-in-touch__btn{
+  padding:40px;
+  background: rgb(208 208 208);
+  
+}
+.request-form-banner .contact-us-btn{
+  background: #252525;
+}
+.request-form__wrapper{
+  height:100px;
+}
+.request-form__wrapper .request-form-banner{
+  bottom: -40%;
+  padding: 0;
+   width: 100%;
+}
+.request-form-banner .contact-us-btn:hover{
+  background: #4d4d4d;
+  color:white;
+}
+.request-form-banner .get-in-touch__btn:before,
+.request-form-banner .get-in-touch__btn:after,
+.request-form-banner .get-in-touch__btn > ::before,
+.request-form-banner .get-in-touch__btn > ::after {
+  background-color: #696969;
+}
 /*
 
 .type-writter h5 {
@@ -711,4 +861,7 @@
   transform: scale(1.5);
   text-decoration: none;
   color: #d3d3d3;
+}
+.noevent{
+  pointer-events: none;
 }

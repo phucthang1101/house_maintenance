@@ -6,6 +6,7 @@ const {
   read,
   deleteCategory,
   updateCategory,
+  readCategory
 } = require('../controllers/categoryController');
 const {
   adminMiddleware,
@@ -14,16 +15,17 @@ const {
 } = require('../controllers/authController');
 const { userById } = require('../controllers/userController');
 
-router.post('/category', requireSignin, adminMiddleware, createCategory);
+router.post('/admin/category', requireSignin, adminMiddleware, createCategory);
 
 router.get('/categories', listAllCategories);
 
 router.post('/category/:slug', read);
+router.get('/category/:slug', readCategory);
 
-router.put('/category/:slug', requireSignin, adminMiddleware, updateCategory);
+router.put('/admin/category/:slug', requireSignin, adminMiddleware, updateCategory);
 
 router.delete(
-  '/category/:slug',
+  '/admin/category/:slug',
   requireSignin,
   adminMiddleware,
   deleteCategory

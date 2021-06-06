@@ -3,6 +3,7 @@ import './servicesBanner.css';
 import Fade from 'react-reveal/Fade';
 import config from 'react-reveal/globals';
 import { motion } from 'framer-motion';
+import renderHTML from 'react-render-html';
 
 const ServicesBanner = (props) => {
   const easing = [0.6, -0.05, 0.01, 0.99];
@@ -29,7 +30,7 @@ const ServicesBanner = (props) => {
         className='services-banner__wrapper'
         style={{
           backgroundSize: 'cover',
-          backgroundImage: `url(${props.service ? props.service.background : randomBackground})`,
+          backgroundImage: `url(${props.service ? props.service.photo : randomBackground})`,
         }}
       >
         <div className='services-banner-layer'></div>
@@ -77,7 +78,7 @@ const ServicesBanner = (props) => {
             }}
           >
             <h1 className='title '>
-            Reliable, Trusted <br/> Professional Services
+           {props.service ? renderHTML(props.service.slogan) : (<>Reliable, Trusted <br/> Professional Services</>)}
             </h1>
           </motion.div>
           {/* <Fade bottom ssrFadeout ssrReveal={true}>

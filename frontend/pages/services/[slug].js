@@ -1,11 +1,13 @@
+import { withRouter } from 'next/router';
 import React, { useEffect, useRef } from 'react';
+import { readServices } from '../../actions/serviceAction';
 import GetInTouchSection from '../../components/getInTouchSection/getInTouchSection';
 import Layout from '../../components/Layout';
 import ServicesBanner from '../../components/services_components/servicesBanner/servicesBanner';
 import ServiceOverview from '../../components/services_components/singleService/serviceOverview/serviceOverview';
 import SingleServiceCard from '../../components/services_components/singleService/singleServiceCard/singleServiceCard';
 
-const SingleService = () => {
+const SingleService = ({ singleServices, product, query }) => {
   const controlSwitch = useRef();
   // console.log('index')
 
@@ -92,12 +94,13 @@ const SingleService = () => {
   };
 
   const renderSingleServiceCard = () => {
-    return DUMMY_BATHROOM.singleServices.map((singleService, index) => {
+    //console.log('singleServices: ', singleServices, 'product:', product);
+    return singleServices.map((singleService, index) => {
       return (
         <SingleServiceCard
           number={index + 1}
           singleService={singleService}
-          lastCard={index+1 == DUMMY_BATHROOM.singleServices.length}
+          lastCard={index + 1 == singleServices.length}
         />
       );
     });
@@ -105,14 +108,27 @@ const SingleService = () => {
   return (
     <React.Fragment>
       <Layout>
-        <ServicesBanner service={DUMMY_BATHROOM} />
+        <ServicesBanner service={product} />
         <div ref={controlSwitch} className='controls-switch'></div>
-        <ServiceOverview service={DUMMY_BATHROOM} />
-        {renderSingleServiceCard()}
+        <ServiceOverview service={product} />
+        {product && singleServices && renderSingleServiceCard()}
         <GetInTouchSection />
       </Layout>
     </React.Fragment>
   );
 };
 
-export default SingleService;
+SingleService.getInitialProps = async ({ query }) => {
+  let singleServices = [];
+  let product;
+
+  try {
+    product = await readServices(query.slug);
+    if (product) singleServices = [...product.singleServices];
+  } catch (err) {
+    console.log(err);
+  }
+
+  return { singleServices, product, query };
+};
+export default withRouter(SingleService);

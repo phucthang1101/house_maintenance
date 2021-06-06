@@ -1,4 +1,4 @@
-a:hover{
+a:hover {
   text-decoration: none;
 }
 .header-top.home-five {
@@ -249,7 +249,7 @@ a:hover{
   position: fixed;
   top: 25px;
   right: 20px;
-  z-index: 2000;
+  z-index: 3000;
   width: 15%;
 }
 .fixed-wrap .higher {
@@ -411,6 +411,10 @@ a:hover{
   font-size: 40px;
   text-transform: uppercase;
   font-weight: 100;
+  transition: all 0.3s;
+}
+.site-menu__nav .menu-item > a:hover {
+  color: white;
 }
 .services-sub-menu {
   overflow: hidden;
@@ -444,8 +448,7 @@ a:hover{
 .services-sub-menu__wrap {
   margin-bottom: 10px;
 }
-.services-sub-menu__link.first{
-
+.services-sub-menu__link.first {
 }
 .services-sub-menu__link.first:before {
   display: none;
@@ -455,7 +458,7 @@ a:hover{
   position: absolute;
   width: 4px;
   height: 4px;
-  background: #810C00;
+  background: #810c00;
   border-radius: 150%;
   left: -1px;
   top: 47%;
@@ -477,4 +480,30 @@ a:hover{
 
 .current_page_item a {
   color: #fff !important;
+}
+
+@media only screen and (max-width: 480px) {
+  .site-header__logo {
+    width: 155px;
+    height: 86px;
+    background-size: 155px auto !important;
+  }
+}
+.site-header__logo {
+  float: left;
+  display: flex;
+  width: 40%;
+  justify-content: space-evenly;
+ 
+}
+
+.site-header__name {
+  color: red;
+  font-size: 30px;
+  font-weight: 600;
+}
+.site-header__subname {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
 }
