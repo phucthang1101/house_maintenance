@@ -4,11 +4,13 @@ import { DOMAIN } from '../../config';
 import './Header.css';
 import React, { useState, useRef, useEffect } from 'react';
 import SearchBox from '../searchBox/searchBox';
+import RequestForm from '../index_components/testimonial_and_request/request-form';
 
 const Header = (props) => {
   const router = useRouter();
   const [openSearch, setOpenSearch] = useState(false);
   const [isExpand, setIsExpand] = useState(false);
+  const [openRequestForm, setOpenRequestForm] = useState(false);
 
   let randomBackground =
     'https://www.stortford-interiors.com/wp-content/uploads/2020/11/Project-Header-.jpg';
@@ -108,6 +110,11 @@ const Header = (props) => {
   const toggleOpenSearch = (e) => {
     e.preventDefault();
     setOpenSearch(!openSearch);
+  };  
+  const toggleOpenRequestForm = (e) => {
+    e.preventDefault();
+    console.log('outside');
+    setOpenRequestForm(!openRequestForm);
   };
 
   const openServicesSubMenu = (e) => {
@@ -479,7 +486,10 @@ const Header = (props) => {
             <a
               id='toggle-search'
               className='site-header__controls__search no-smoothState'
-            ></a>
+              onClick={toggleOpenRequestForm}
+            >
+              <p>Get Quote</p>
+            </a>
             <a
               id='toggle'
               className='site-header__controls__menu no-smoothState'
@@ -488,8 +498,13 @@ const Header = (props) => {
           </div>
         </div>
       </div>
-      <section className={`hidden-search ${openSearch ? 'open' : ''}`}>
+      {/* <section className={`hidden-search ${openSearch ? 'open' : ''}`}>
         <SearchBox toggleOpenSearch={toggleOpenSearch} />
+      </section> */}
+       <section
+        className={`hidden-search  ${openRequestForm ? 'open fadeInUp' : ''}`}
+      >
+        <RequestForm toggleOpenRequestForm={toggleOpenRequestForm} />
       </section>
     </React.Fragment>
   );

@@ -23,6 +23,7 @@ const userRoute = require('./routes/userRoute');
 const categoryRoute = require('./routes/categoryRoute');
 const productRoute = require('./routes/productRoute');
 const singleServiceRoute = require('./routes/singleServiceRoute');
+const formRoutes = require('./routes/formRoute')
 
 //mongoDB
 
@@ -43,6 +44,8 @@ app.use('/api', userRoute);
 app.use('/api', categoryRoute);
 app.use('/api', productRoute);
 app.use('/api', singleServiceRoute);
+app.use('/api',formRoutes)
+
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {

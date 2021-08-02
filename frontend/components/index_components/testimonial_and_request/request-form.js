@@ -1,16 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import {emailContactForm} from '../../../actions/formAction';
+import { ToastContainer, toast } from 'react-toastify';
 
+toast.configure();
 const RequestForm = (props) => {
   const [imgArr, setImgArr] = useState([]);
   let fileObj = [],
     fileArr = [];
+  const [initialImgArr, setInitialImgArr]= useState([]);
 
+   const [values, setValues] = useState({
+    message: '',
+    name: '',
+    email: '',
+    phone:'',
+    formData: '',
+    sent: false,
+    success: false,
+    error: false,
+  });
+
+  const { message, name, email, phone,formData, sent, success, error } = values;
+
+  useEffect(() => {
+    setValues({ ...values, formData: new FormData() });
+  }, []);
+  
   const uploadMultipleFiles = (e) => {
+    fileArr = [...imgArr];
     fileObj.push(e.target.files);
+    //  console.log(fileObj);
     for (let i = 0; i < fileObj[0].length; i++) {
-      fileArr.push(URL.createObjectURL(fileObj[0][i]));
+      let url = URL.createObjectURL(fileObj[0][i]),
+        name = fileObj[0][i].name;
+      fileArr.push({
+        url,
+        name,
+      });
     }
+
+    // console.log(fileArr)
     setImgArr(fileArr);
+    setInitialImgArr(fileObj);
+  };
+
+  const deletePreviewImg = (e) => {
+    let cloneImgArr = [...imgArr];
+    for (let i = 0; i < cloneImgArr.length; i++) {
+      if (cloneImgArr[i].name === e.target.id) {
+        cloneImgArr.splice(i, 1);
+      }
+    }
+    setImgArr(cloneImgArr);
   };
 
   const cambiar_login = () => {
@@ -56,26 +97,64 @@ const RequestForm = (props) => {
 
   const testOnClick = (e) => {
     e.stopPropagation();
-    console.log('inside');
+  //  console.log('inside');
   };
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    console.log(imgArr);
+  //  console.log(initialImgArr);
+    for (let i = 0; i < initialImgArr[0].length; i++){
+      formData.append('photo', initialImgArr[0][i])
+    }
+   
+    setValues({ ...values, buttonText: 'Sending...' });
+    emailContactForm(formData).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error });
+        toast.error(data.error);
+      } else {
+        setValues({
+          ...values,
+          sent: true,
+          name: '',
+          email: '',
+          message: '',
+          phone:'',
+          buttonText: 'Sent',
+          success: data.success,
+        });
+        if(data.success){
+          toast.success('Thank you for contacting me ^^');
+        }
+      }
+    });
   };
+
+  const handleChange = (name) => (e) => {
+    if(name==='photo')return;
+    formData.set(name, e.target.value);
+  
+    setValues({
+      ...values,
+      [name]: e.target.value,
+      formData,
+      error: false,
+      success: false,
+    });
+  };
+
   return (
     <React.Fragment>
       <div
         className='cotn_principal'
         onClick={(e) => props.toggleOpenRequestForm(e)}
       >
-     
         <div className='cont_centrar'>
-        <a
-          href='#'
-          className=' request-form__close-btn fa fa-times'
-          onClick={(e) => props.toggleOpenRequestForm(e)}
-        ></a>
+          <a
+            href='#'
+            className=' request-form__close-btn fa fa-times'
+            onClick={(e) => props.toggleOpenRequestForm(e)}
+          ></a>
           <div className='cont_login' onClick={(e) => testOnClick(e)}>
             <div className='cont_info_log_sign_up row mx-0'>
               <div className='col_md_login col-12 col-md-6'>
@@ -119,74 +198,135 @@ const RequestForm = (props) => {
                 />
               </div>
               <div className='cont_form_login'>
-                <a href='#' onClick={ocultar_login_sign_up}>
+                <span onClick={ocultar_login_sign_up}>
                   <i className='fa fa-arrow-left' aria-hidden='true'></i>
-                </a>
+                </span>
                 <h2>REQUEST FORM</h2>
                 <form onSubmit={onSubmitForm}>
-                  <input type='text' placeholder='Name' />
-                  <input type='text' placeholder='Email' />
-
-                  <input
-                    type='file'
-                    className=''
-                    onChange={uploadMultipleFiles}
-                    multiple
-                  />
-                  <label htmlFor='files'>Capture your problems</label>
-                  <div className='form-group multi-preview'>
-                    {(imgArr || []).map((url) => (
-                      <img src={url} alt='...' />
-                    ))}
+                  <div className='row mx-0'>
+                    <div className='form-group col-4 form-group-basic'>
+                      <label>Name</label>
+                      <input
+                        type='text'
+                        placeholder='Name'
+                        class='form-control'
+                        onChange={handleChange('name')}
+                        value={name}
+                      />
+                    </div>
+                    <div className='form-group col-4 form-group-basic'>
+                      <label>Email</label>
+                      <input
+                        type='text'
+                        placeholder='Email'
+                        class='form-control'
+                        onChange={handleChange('email')}
+                        value={email}
+                      />
+                    </div>
+                    <div className='form-group col-4 form-group-basic'>
+                      <label>Phone</label>
+                      <input
+                        type='text'
+                        placeholder='Phone'
+                        class='form-control'
+                        onChange={handleChange('phone')}
+                        value={phone}
+                      />
+                    </div>
+                    <div className='row mx-0 w-100'>
+                      <div className='col-12'>
+                        <label className='col-4 my-4' htmlFor='files'>
+                          Capture your problems
+                        </label>
+                        <input
+                          type='file'
+                          className='col-8 my-4 request__form-input__form fa fa-plus'
+                          onChange={uploadMultipleFiles}
+                          multiple
+                        />
+                        <div
+                          className='form-group multi-preview col-12 pb-2'
+                          id='style-1'
+                        >
+                          {(imgArr || []).map((img) => (
+                            <>
+                              <div className='img-preview-wrap '>
+                                <span
+                                  className='img-preview-close'
+                                  id={img.name}
+                                  onClick={deletePreviewImg}
+                                >
+                                  &times;
+                                </span>
+                                <img
+                                  className='img-preview'
+                                  src={img.url}
+                                  alt={img.name}
+                                  title={img.name}
+                                />
+                                <div className='img-preview-caption'>
+                                  {img.name}
+                                </div>
+                              </div>
+                            </>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className='row mx-0 w-100 mt-3'>
+                      <div className='col-8 mx-auto'>
+                        <textarea
+                          className='request-form__message'
+                          placeholder='Describe your problems'
+                          onChange={handleChange('message')}
+                          value={message}
+                        ></textarea>
+                      </div>
+                    </div>
                   </div>
-                  <textarea
-                    className='request-form__message'
-                    placeholder='Describe your problems'
-                  ></textarea>
-                  <input type='submit' className='btn_login' value='Submit' />
+                  <div className=''>
+                    <input type='submit' className='btn_login' value='Submit' />
+                  </div>
                 </form>
               </div>
 
               <div className='cont_form_sign_up'>
-                <a href='#' onClick={ocultar_login_sign_up}>
+                <span onClick={ocultar_login_sign_up}>
                   <i className='fa fa-arrow-left' aria-hidden='true'></i>
-                </a>
+                </span>
                 <h2>Get In Touch</h2>
-              
-                 
-                  <div className='contact-detail row mx-0'>
-                    <ul>
-                      <li>
-                        <i className='fa fa-map-marker'></i>
-                        <div className='location_address fleft'>
-                          <strong>Logis Cargo Ltd.</strong>
-                          <br />
-                          42B, Tailstoi Town 5248 MT, Wordwide Country
-                        </div>
-                      </li>
-                      <li>
-                        <i className='fa fa-phone'></i>
-                        <div className='fleft contact_no'>
-                          <a href='#'>+ 01865 524 8503</a> /{' '}
-                          <a href='#'>1254 954 7854</a>
-                        </div>
-                      </li>
-                      <li>
-                        <i className='fa fa-envelope-o'></i>
-                        <div className='fleft contact_mail'>
-                          <a href='#'>contact@logiccargo.com</a>
-                        </div>
-                      </li>
-                      <li>
-                      <i className="fa fa-clock-o" aria-hidden="true"></i>
 
-                        <div className='fleft service_time'>
-                          Monday – Friday : 800 – 1900
-                        </div>
-                      </li>
-                    </ul>
-                 
-                </div>
+                <div className='contact-detail row mx-0'>
+                <ul>
+                        <li>
+                          <i className='fa fa-map-marker'></i>
+                          <div className='location_address fleft'>
+                            <strong>D.C Finisher</strong>
+                            <br />
+                            1109 Wyandotte St West, Windsor
+                          </div>
+                        </li>
+                        <li>
+                          <i className='fa fa-phone'></i>
+                          <div className='fleft contact_no'>
+                           + 226 506 4825
+                          </div>
+                        </li>
+                        <li>
+                          <i className='fa fa-envelope' aria-hidden='true'></i>
+                          <div className='fleft contact_mail'>
+                          matttran1101@gmail.com
+                          </div>
+                        </li>
+                        <li>
+                          <i className='fa fa-clock-o' aria-hidden='true'></i>
+                          <div className='fleft service_time'>
+                            Monday – Friday : 9:00 - 5:00
+                          </div>
+                        </li>
+                      </ul>
+                     </div>
               </div>
             </div>
           </div>

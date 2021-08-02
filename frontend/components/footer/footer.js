@@ -1,5 +1,7 @@
 import React from 'react';
 import './footer.css';
+import Link from 'next/link';
+
 const Footer = () => {
   return (
     <React.Fragment>
@@ -43,17 +45,17 @@ const Footer = () => {
                     </div>
 
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et.
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et.
+                      We work to ensure people’s comfort at their home, and to
+                      provide the best and the fastest help at fair prices. We
+                      stand for quality, safety and credibility, so you could be
+                      sure about our work.
                     </p>
-                   
-                      <a className='read_more' href='#'>
+                    <Link href='/about'>
+                      <a className='read_more'>
                         Read More <i className='fa fa-angle-double-right'></i>
                       </a>
-                   
-                   
+                    </Link>
+
                     {/* <div className='social_icon row m0'>
                   
                       <div className='social-btns'>
@@ -89,41 +91,51 @@ const Footer = () => {
                         <div className='widget_inner row mx-0'>
                           <ul>
                             <li>
-                              <a href='#'>House Remodeling</a>
+                              <Link href='/services/bathroom'>
+                                <a className=''>Bathroom</a>
+                              </Link>
                             </li>
                             <li>
-                              <a href='#'>Plumbing Services</a>
+                              <Link href='/services/doors-windows'>
+                                <a className=''>Door/Windows</a>
+                              </Link>
                             </li>
                             <li>
-                              <a href='#'>Wood Flooring</a>
+                              <Link href='/services/walls-drywall'>
+                                <a className=''>Drywall</a>
+                              </Link>{' '}
                             </li>
                             <li>
-                              <a href='#'>Doors and Windows</a>
+                              <Link href='/services/plumbing'>
+                                <a className=''>Plumbing</a>
+                              </Link>{' '}
                             </li>
                             <li>
-                              <a href='#'>Tiling and Painting</a>
+                              <Link href='/services/painting'>
+                                <a className=''>Painting</a>
+                              </Link>
                             </li>
                           </ul>
                         </div>
                       </div>
                       <div className='text-align-center col-6 px-0'>
-                        <h4 className='widget_title'>overview</h4>
+                        <h4 className='widget_title'>Overview</h4>
                         <div className='widget_inner row mx-0'>
                           <ul>
                             <li>
-                              <a href='#'>About</a>
+                              <Link href='/about'>
+                                <a>About</a>
+                              </Link>
                             </li>
                             <li>
-                              <a href='#'>Service</a>
+                              <Link href='/services'>
+                                <a>Services</a>
+                              </Link>
                             </li>
                             <li>
-                              <a href='#'>Contact</a>
-                            </li>
-                            <li>
-                              <a href='#'>Terms of Use</a>
-                            </li>
-                            <li>
-                              <a href='#'>Sitemap</a>
+                              <Link href='/contact'>
+                                <a>Contact</a>
+                              </Link>
                             </li>
                           </ul>
                         </div>
@@ -144,28 +156,27 @@ const Footer = () => {
                         <li>
                           <i className='fa fa-map-marker'></i>
                           <div className='location_address fleft'>
-                            <strong>Logis Cargo Ltd.</strong>
+                            <strong>D.C Finisher</strong>
                             <br />
-                            42B, Tailstoi Town 5248 MT, Wordwide Country
+                            1109 Wyandotte St West, Windsor
                           </div>
                         </li>
                         <li>
                           <i className='fa fa-phone'></i>
                           <div className='fleft contact_no'>
-                            <a href='#'>+ 01865 524 8503</a> /{' '}
-                            <a href='#'>1254 954 7854</a>
+                           + 226 506 4825
                           </div>
                         </li>
                         <li>
-                          <i className='fa fa-envelope-o'></i>
+                          <i className='fa fa-envelope' aria-hidden='true'></i>
                           <div className='fleft contact_mail'>
-                            <a href='#'>contact@logiccargo.com</a>
+                          matttran1101@gmail.com
                           </div>
                         </li>
                         <li>
-                          <i className='icon icon-Timer'></i>
+                          <i className='fa fa-clock-o' aria-hidden='true'></i>
                           <div className='fleft service_time'>
-                            Monday – Friday : 800 – 1900
+                            Monday – Friday : 9:00 - 5:00
                           </div>
                         </li>
                       </ul>
@@ -176,19 +187,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='row m0 footer_bottom'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-sm-8'>
-                Copyright ©<a href='#'>Handylexo</a>
-                2019. All rights reserved
-              </div>
-              <div className='right col-sm-4'>
-                Created by:
-                <a href='#'>DesignArc</a>
-              </div>
-            </div>
-          </div>
+        <div className='footer_bottom'>
+          Designed and Developed by: Thang and Van
         </div>
       </footer>
     </React.Fragment>

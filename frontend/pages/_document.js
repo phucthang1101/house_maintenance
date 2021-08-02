@@ -89,7 +89,7 @@ class MyDocument extends Document {
           />
            <link
             rel='stylesheet'
-            href='https://cdn.jsdelivr.net/npm/react-toastify@6.0.5/dist/ReactToastify.min.css'
+            href='https://cdn.jsdelivr.net/npm/react-toastify@7.0.3/dist/ReactToastify.css'
           />
         </Head>
         <body>

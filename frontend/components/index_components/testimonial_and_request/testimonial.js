@@ -6,7 +6,8 @@ import RequestForm from './request-form';
 const Testimonial = () => {
   const [nav1, setNav1] = useState();
   const [nav2, setNav2] = useState();
-  const [openRequestForm, setOpenRequestForm] = useState(false);
+
+  let countActive = 0;
   const typewriter = (
     index,
     h5text,
@@ -32,9 +33,8 @@ const Testimonial = () => {
     let ptextLength = ptext.length;
     let h6textLength = h6text.length;
     if (h5textCount < h5textLength) {
-      document.getElementById(`h5-writter-${index}`).innerHTML += h5text.charAt(
-        h5textCount
-      );
+      document.getElementById(`h5-writter-${index}`).innerHTML +=
+        h5text.charAt(h5textCount);
       h5textCount++;
       setTimeout(function () {
         typewriter(
@@ -48,9 +48,8 @@ const Testimonial = () => {
         );
       }, 20);
     } else if (ptextCount < ptextLength) {
-      document.getElementById(`p-writter-${index}`).innerHTML += ptext.charAt(
-        ptextCount
-      );
+      document.getElementById(`p-writter-${index}`).innerHTML +=
+        ptext.charAt(ptextCount);
       ptextCount++;
       setTimeout(function () {
         typewriter(
@@ -64,9 +63,8 @@ const Testimonial = () => {
         );
       }, 20);
     } else if (h6textCount < h6textLength) {
-      document.getElementById(`h6-writter-${index}`).innerHTML += h6text.charAt(
-        h6textCount
-      );
+      document.getElementById(`h6-writter-${index}`).innerHTML +=
+        h6text.charAt(h6textCount);
       h6textCount++;
       setTimeout(function () {
         typewriter(
@@ -82,44 +80,47 @@ const Testimonial = () => {
       if (h6textLength - h6textCount == 1) {
         document.getElementById(`testimonial-img-${index}`).classList +=
           'active-item';
+        countActive++;
+        if (countActive === 3) {
+          document.getElementById(`testimonial-title-id`).classList +=
+            ' testimonial-title-active';
+        }
       }
     }
   };
   const DUMMY_TESTIMONIAL = [
     {
-      h5text: 'I am very happy with their work',
+      h5text: 'Fast, quality and trustworthy service',
       ptext:
-        'I first hired Mitch as a Painting Contractor Finisher in Toronto in 2011. He soon became one of our Contract Supervisors who was selected out of approximately 30 men and women that worked as painting contractors. Mitch was an asset to his team and our company and only wish him well in his future. ',
-      h6text: '- Argo and Jerry Painting Contractors, Toronto',
+        'Dao and Tu were very professional, timely and efficient. I have used contractors in the past and find this is a much better and less frustrating way to get home renovations completed to my satisfaction. I would definitely recommend D.C Finisher to my friends and family. ',
+      h6text: 'Karen R. - Erie St. Windsor ',
       imgSrc:
         'http://shtheme.net/demosd/handylexo5/wp-content/uploads/2018/10/testimonial3.jpg',
     },
     {
-      h5text: 'I am very happy with their work2',
+      h5text: 'Free estimate, Free design and Elegant style.',
       ptext:
-        'Hello Codepedfdfdfdfdfn!!! Adipiscing elit, sed do eiusmod tempor incididunt ut labore ',
-      h6text: '- Michale John',
+        'Dao has already completed two different jobs for us. In each case, the work was high quality, on time and within budget. They kept us well informed and maintained a clean and safe work site throughout the process. They went far beyond our expectations with brilliant new design ideas for the interior. Nice!”',
+      h6text: 'Mike D. - Niagara St. Windsor ',
       imgSrc:
         'http://shtheme.net/demosd/handylexo5/wp-content/uploads/2018/10/testimonial1.jpg',
     },
     {
-      h5text: 'I am very happy with their work3',
+      h5text: 'Quick response and reasonable price',
       ptext:
-        'Hello Codepedfdfdfdfdfn!!! Adipiscing elit, sed do eiusmod tempor incididunt ut labore ',
-      h6text: '- Michale John',
+        "Great service and exceptional work and competitive pricing. The workmanship that Dao performed couldn't have been done better by even the builders. Highly recommended. No need to search elsewhere.",
+      h6text: 'D. Pearce - Cambpell Ave. Windsor ',
       imgSrc:
         'http://shtheme.net/demosd/handylexo5/wp-content/uploads/2018/10/testimonial2.jpg',
     },
   ];
-  const toggleOpenRequestForm = (e) => {
-    e.preventDefault();
-    console.log('outside');
-    setOpenRequestForm(!openRequestForm);
-  };
+
   return (
     <React.Fragment>
       <div className='testimonial-and-request-container '>
-        <h1 className='testimonial-title'>Testimonial</h1>
+        <h1 className='testimonial-title' id='testimonial-title-id'>
+          Testimonial
+        </h1>
         <div className='row mx-0'>
           {DUMMY_TESTIMONIAL &&
             DUMMY_TESTIMONIAL.map((testimonial, index) => (
@@ -146,7 +147,7 @@ const Testimonial = () => {
                   <p id={`p-writter-${index}`}></p>
 
                   <h6>
-                    <a id={`h6-writter-${index}`} href='#'></a>
+                    <p id={`h6-writter-${index}`}></p>
                   </h6>
                 </div>
               </div>
@@ -172,11 +173,11 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-      <section
+      {/* <section
         className={`hidden-search  ${openRequestForm ? 'open fadeInUp' : ''}`}
       >
         <RequestForm toggleOpenRequestForm={toggleOpenRequestForm} />
-      </section>
+      </section> */}
     </React.Fragment>
   );
 };
