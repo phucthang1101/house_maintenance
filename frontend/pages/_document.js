@@ -57,6 +57,7 @@ class MyDocument extends Document {
           /> */}
           <link rel='stylesheet' href='/static/css/styles.css' />
           <link rel='stylesheet' href='/static/css/fonts-icon.css' />
+          <link rel='icon' type='image/png' href='/static/images/favicon.png' />
           <link
             rel='stylesheet'
             href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css'

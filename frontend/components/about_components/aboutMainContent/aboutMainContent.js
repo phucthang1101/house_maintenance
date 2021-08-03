@@ -94,7 +94,7 @@ const AboutMainContent = () => {
                     <h4>Who we are</h4>
                   </div>
                   <div className='heading-title'>
-                    <h2>We have 25 years of experience</h2>
+                    <h2>We have 20 years of experience</h2>
                   </div>
                 </div>
                 <div className='content-panels__wrapper'>
@@ -103,16 +103,11 @@ const AboutMainContent = () => {
                       className='panel-heading panel-active'
                       onClick={(e) => animatedAccordion(e)}
                     >
-                      Started Handyman Services in 2017
+                     Who is D.C Finisher?
                     </button>
                     <div className='panel-body  panel-body-active'>
                       <p>
-                        11 We work to ensure people’s comfort at their home, and
-                        to provide the best and the fastest help at fair prices.
-                        We stand for quality, safety and credibility, so you
-                        could be sure about our work. Initially we started Now
-                        we are proud that we can help people with welding,
-                        moving, dry clean pest control.
+                      As a handyman based in Windsor Ontario, D.C Finisher provides various types of renovations and repair jobs, both large and small.From bathroom renovations to painting to odd jobs around your home you can count on us for quality home improvements, repairs, and maintenance
                       </p>
                     </div>
                   </div>
@@ -121,16 +116,11 @@ const AboutMainContent = () => {
                       className='panel-heading panel-active'
                       onClick={(e) => animatedAccordion(e)}
                     >
-                      Started Handyman Services in 2017
+                     Why Choose D.C Finisher for your next home renovation?
                     </button>
                     <div className='panel-body'>
                       <p>
-                        We work to ensure people’s comfort at their home, and to
-                        provide the best and the fastest help at fair prices. We
-                        stand for quality, safety and credibility, so you could
-                        be sure about our work. Initially we started Now we are
-                        proud that we can help people with welding, moving, dry
-                        clean pest control.
+                      Local communities trust our services We offer only the highest quality of service by members of your community who make it our goal on every project to deliver the highest level of satisfaction to our clients.
                       </p>
                     </div>
                   </div>
@@ -139,16 +129,11 @@ const AboutMainContent = () => {
                       className='panel-heading panel-active'
                       onClick={(e) => animatedAccordion(e)}
                     >
-                      Started Handyman Services in 2017
+                      Experience Makes the Difference
                     </button>
                     <div className='panel-body'>
                       <p>
-                        We work to ensure people’s comfort at their home, and to
-                        provide the best and the fastest help at fair prices. We
-                        stand for quality, safety and credibility, so you could
-                        be sure about our work. Initially we started Now we are
-                        proud that we can help people with welding, moving, dry
-                        clean pest control.
+                      Anyone can them-self become a handyman, however a true "handyman" is a tradesman with real experience. That is exactly what you get when you call Mitch Bracken Handyman Services of Windsor. Having performed a lot of projects of house maintenance, you can be sure our staff has the experience to do things right the first time.
                       </p>
                     </div>
                   </div>

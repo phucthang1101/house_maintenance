@@ -18,7 +18,7 @@ const AboutServices = () => {
               </div>
               <div className='introduction-content__body col-12 col-md-7'>
                 <p>
-                  Boldman has 10+ years of experience with providing wide area
+                  D.C Finisher has 15+ years of experience of providing wide area
                   of specialty services works listed below.
                 </p>
               </div>

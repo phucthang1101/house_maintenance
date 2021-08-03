@@ -17,9 +17,7 @@ const AboutFollowStep = () => {
               </div>
               <div className='header-description'>
                 <p>
-                  Raising a heavy fur muff that covered the whole of her lower
-                  arm towards the viewer regor then turned to look out the
-                  window
+                Services from Mr. Handyman are trusted, reliable and professional. Please follow these steps, and request for the best service in town.
                 </p>
               </div>
 
@@ -174,7 +172,7 @@ const AboutFollowStep = () => {
                   </span>
                 </div>
                 <div className='free-estimate'>
-                  <h2>Free Estimate: 519 — 999 — 2515</h2>
+                  <h2>Free Estimate: 226 — 506 — 4825</h2>
                 </div>
               </div>
             </div>

@@ -6,10 +6,35 @@ import Layout from '../../components/Layout';
 import ServicesBanner from '../../components/services_components/servicesBanner/servicesBanner';
 import ServiceOverview from '../../components/services_components/singleService/serviceOverview/serviceOverview';
 import SingleServiceCard from '../../components/services_components/singleService/singleServiceCard/singleServiceCard';
+import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
+import Head from 'next/head';
 
 const SingleService = ({ singleServices, product, query }) => {
   const controlSwitch = useRef();
   // console.log('index')
+
+  const head = () => (
+    <Head>
+      <title>
+        {product.name} | {APP_NAME}
+      </title>
+      <meta name='description' content={product.mdesc} />
+      <link rel='canonical' href={`${DOMAIN}/blogs/${query.slug}`} />
+      <meta property='og:title' content={`${product.name} | ${APP_NAME}`} />
+      <meta name='og:description' content={product.mdesc} />
+      <meta name='og:type' content='website' />
+      <meta name='og:url' content={`${DOMAIN}/blogs/${query.slug}`} />
+      <meta name='og:site_name' content='Home Repairs & Maintenance | Handyman Services  ' />
+      {/* social-media */}
+      <meta name='og:image' content={`${API}/blog/photo/${product.slug}`} />
+      <meta
+          name='og:image:secure_url'
+          content={`${DOMAIN}/static/images/freeLogo3-removebg.png`}
+        />
+      <meta name='og:image:type' content='image/png' />
+      <meta name='fb:app_id' content={`${FB_APP_ID}`} />
+    </Head>
+  );
 
   const changeMenuBg = () => {
     const position = window.pageYOffset;
@@ -107,6 +132,7 @@ const SingleService = ({ singleServices, product, query }) => {
   };
   return (
     <React.Fragment>
+      {head()}
       <Layout>
         <ServicesBanner service={product} />
         <div ref={controlSwitch} className='controls-switch'></div>

@@ -25,9 +25,7 @@ const AboutStragety = () => {
                         <div className='vision-description'>
                           <p>
                             {' '}
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem dummy text ever since
-                            the 1500s
+                            Our commitment to providing the highest level of craftsmanship and customer service is second to none.
                           </p>
                         </div>
                       </div>
@@ -49,9 +47,7 @@ const AboutStragety = () => {
                         <div className='vision-description'>
                           <p>
                             {' '}
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem dummy text ever since
-                            the 1500s
+                            Our mission is simple. To offer the best handyman and home repair services available at an affordable price.  
                           </p>
                         </div>
                       </div>
@@ -73,9 +69,7 @@ const AboutStragety = () => {
                         <div className='vision-description'>
                           <p>
                             {' '}
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem dummy text ever since
-                            the 1500s
+                            We are your members of your community and will always be your neighbor first.
                           </p>
                         </div>
                       </div>
